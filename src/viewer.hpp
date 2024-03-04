@@ -1,3 +1,6 @@
+/*** This is a modified version of the original file *****/
+
+
 /****************************************************************************
 
  Copyright (C) 2002-2014 Gilles Debunne. All rights reserved.

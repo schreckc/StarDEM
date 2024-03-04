@@ -1,3 +1,9 @@
+This is the code corresponding to the article "StarDEM: efficient discrete element method for star-shaped particles".
+
+https://github.com/schreckc
+
+*************************
+
 Dependency:
 Eigen3
 qt5
@@ -13,9 +19,25 @@ cd ..
 qmake dem2d.pro
 make
 
+Change the number of threads used by OpenMP:
+export OMP_NUM_THREADS=1
+
 **************
 
-Script:
+Script to reproduce the examples of the article:
+
+Packing:
+  * random shapes
+    ./packing.sh
+  * spheres
+    ./packing.sh 1
+  * crosses
+    ./packing.sh 2
+  * butterflies
+    ./packing.sh 3
+  * bats
+    ./packing.sh 4
+Bridge:
   * random shapes
     ./bridge.sh    
   * flowers
@@ -24,6 +46,27 @@ Script:
     ./bridge.sh 2
   * blobs + visualization of the force network
     ./bridge.sh 3
+Drum:
+   * random shapes
+    ./drum.sh
+   * flowers
+    ./drum.sh 1
+   * peanuts
+    ./drum.sh 2
+   * rocks
+    ./drum.sh 3
+Column collapsing
+   * random shapes
+    ./rest_angle.sh
+   * pears
+    ./rest_angle.sh 1
+   * dragonflies
+    ./rest_angle.sh 2
+   * rocks
+    ./rest_angle.sh 3
+
+
+********************************
     
 Usage:
 ./dem2d -c <config file> -s <scene file>
