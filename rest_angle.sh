@@ -12,6 +12,8 @@ if [ $# -ne 0 ]; then
 	scene="rest_angle_dragonfly.sc"
     elif [ "$1" = 3 ]; then
 	scene="rest_angle_rock.sc"
+    elif [ "$1" = 4 ]; then
+	scene="rest_angle_flower.sc"
     else
 	arguments=${@:1}
     fi
