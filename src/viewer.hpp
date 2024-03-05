@@ -25,8 +25,8 @@
 
 #ifndef NO_GRAPHICS_
 
-#include <QGLViewer/qglviewer.h>
-#include <QGLViewer/manipulatedFrame.h>
+#include "QGLViewer/qglviewer.h"
+#include "QGLViewer/manipulatedFrame.h"
 #include "Simulation.hpp"
 
 

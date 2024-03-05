@@ -2,7 +2,6 @@
 #define RBOX_OBSTACLE_HPP
 
 #include "Obstacle.hpp"
-#include <QGLViewer/qglviewer.h>
 
 class RBoxObstacle : public Obstacle {
 private :

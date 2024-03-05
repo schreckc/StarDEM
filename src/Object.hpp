@@ -20,7 +20,7 @@
 #ifndef OBJECT_HPP
 #define OBJECT_HPP
 
-#include <QGLViewer/qglviewer.h>
+#include "QGLViewer/qglviewer.h"
 #include "definitions.hpp"
 
 

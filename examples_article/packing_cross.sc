@@ -28,7 +28,8 @@
 </obstacles>
 <particules>
  <mass> 0.2
- <radius> 5
+ <radius> 4.37
+# <radius> 5
  <random rotation>
  <coefs> 9 1 0 0 0 0 0 0 0 1 // cross
 # <coefs> 15 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 // butterfly

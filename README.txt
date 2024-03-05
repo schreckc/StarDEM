@@ -75,7 +75,7 @@ $ ./dem2d -c <config file> -s <scene file>
 To get all the option
 $ ./dem -h 
 
-Keyboard shortcut: see help window (Keyboard tab).
+Keyboard shortcut and displacements: see help window (Keyboard tab).
 
 ************
 

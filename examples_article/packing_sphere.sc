@@ -28,7 +28,8 @@
 </obstacles>
 <particules>
  <mass> 0.2
- <radius> 3.8
+ <radius> 3.09
+# <radius> 3.8
  <random rotation>
  <coefs> 3 1 0 0
  <grid_sampling> 

@@ -466,9 +466,11 @@ float Smarticle::computeArea() {
   }
   if (radius != 0) { //radius fixed
     a *= radius*radius*M_PI;
+    std::cout<<"area "<<a<<std::endl;
   } else { // volume fixed
     a *= M_PI;
     radius = sqrt(area/a);
+    std::cout<<"radius "<<radius<<std::endl;
   }
   return a;
 }
