@@ -23,6 +23,7 @@
 #include "definitions.hpp"
 
 #define _WHITE
+//#define _USE_RADIAL_DIST
 
 namespace dem_conf {
 

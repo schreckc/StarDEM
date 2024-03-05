@@ -206,27 +206,20 @@ void Contact::draw() {
     s.setColor(col(0), col(1), col(2));
 #endif
 
+    glLineWidth(5.0f);
     glPushMatrix();
     glTranslatef(pt(0), pt(1), 0); 
     s.draw();
-    glBegin(GL_LINES); 
+    glBegin(GL_LINES);
+#ifdef _WHITE
+    glColor3f(0, 0, 0);
+#else 
     glColor3f(col(0), col(1), col(2));
-    glVertex3f(0, 0, 0);
-    glVertex3f(normal(0), normal(1), 0);
+#endif
+    glVertex3f(0, 0, 0.1);
+    glVertex3f(2*normal(0), 2*normal(1), 0.1);
     glEnd();
     glPopMatrix();
-
-    s.setColor(1, 1, 1);
-    glPushMatrix();
-    glTranslatef(I1(0), I1(1), 0); 
-    s.draw();
-    glPopMatrix();
-    s.setColor(0, 1, 1);
-    glPushMatrix();
-    glTranslatef(I2(0), I2(1), 0);
-    s.draw();
-    glPopMatrix();
-
   }
 
   

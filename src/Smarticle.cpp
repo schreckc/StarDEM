@@ -249,29 +249,42 @@ void Smarticle::drawContact() {
     glPushMatrix();
     glTranslatef(pos(0), pos(1), 0);
     for (auto c: contacts_c) {
+#ifdef _WHITE
+      glColor3f(0, 0, 0.1);
+#else
       glColor3f(1, 1, 1);
+#endif
       glBegin(GL_LINES);
       float rc = radius;
       glVertex3f(0, 0, 0);
-      glVertex3f(rc*cos(c->a1), rc*sin(c->a1), 0);
+      glVertex3f(rc*cos(c->a1), rc*sin(c->a1), 0.1);
       rc = radius;
+
+#ifdef _WHITE
+      glColor3f(0, 0, 1);
+#else
       glColor3f(1, 1, 0);
-      glVertex3f(0, 0, 0);
-      glVertex3f(rc*cos(c->a2), rc*sin(c->a2), 0);
+#endif
+      glVertex3f(0, 0, 0.1);
+      glVertex3f(rc*cos(c->a2), rc*sin(c->a2), 0.1);
       glEnd();
     }
     
-    glLineWidth(1.0f);
+    glLineWidth(2.0f);
+#ifdef _WHITE
+    glColor3f(0.2, 0.2, 0.2);
+#else
     glColor3f(0.8, 0.8, 0.8);
+#endif
     int nstep = dem_conf::sm_resolution_display;
     FLOAT a = 0;
     FLOAT astep = 2*M_PI/(FLOAT)nstep;
 
     glBegin(GL_LINES);
     for (uint i = 0; i < nstep; ++i) {
-      glVertex3f(radius*cos(a), radius*sin(a), 0);
+      glVertex3f(radius*cos(a), radius*sin(a), 0.1);
       a+=astep;
-      glVertex3f(radius*cos(a), radius*sin(a), 0);
+      glVertex3f(radius*cos(a), radius*sin(a), 0.1);
     }
     glEnd();
     glPopMatrix();
@@ -643,8 +656,11 @@ bool Smarticle::getCollisionValues(VEC2 v, FLOAT & dist, VEC2 &normal) {
   VEC2 grad = VEC2(dfdx, dfdy);
   FLOAT ngrad = sqrt(dfdx*dfdx + dfdy*dfdy);
   normal = grad.normalized();
+#ifndef _USE_RADIAL_DIST
   dist = f/ngrad;
-  
+#else
+  dist = f;
+#endif
   return true;
 }
 
