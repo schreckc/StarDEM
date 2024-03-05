@@ -47,6 +47,10 @@ Bridge:
     $ ./bridge.sh 2
   * blobs + visualization of the force network
     $ ./bridge.sh 3
+  * moths
+    $ ./bridge.sh 4
+  * cogs
+    $ ./bridge.sh 5	
 Drum:
    * random shapes
     $ ./drum.sh

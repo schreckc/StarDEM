@@ -32,6 +32,7 @@
  <mass> 0.2
  <radius> 5
  <coefs> 13 1 0 0 0 0 0 0 0 0 0 0 1 0 # flower
+# <coefs> 21 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 # cog
 # <coefs> 15 1 0 0 0.3 0.4 0 0 0 0 0.5 0 0 0 0 0 #blob
 # <coefs> 21 1.5 0 0 0 0.5 0 0.2 0 0 0 0 1 0 0 0 0 0 0 0 0 0.8 #other
  <random rotation>

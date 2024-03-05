@@ -15,6 +15,8 @@ if [ $# -ne 0 ]; then
 	conf="bridges_network.conf"
     elif [ "$1" = 4 ]; then
 	scene="bridges_other.sc"
+    elif [ "$1" = 5 ]; then
+	scene="bridges_cog.sc"
     else
 	arguments=${@:1}
     fi
