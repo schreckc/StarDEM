@@ -24,7 +24,8 @@ $ export OMP_NUM_THREADS=1
 
 **************
 
-Script to reproduce the examples of the article:
+Script to reproduce the examples of the article: 
+(to display the timings add the option -verbose)
 
 Packing:
   * random shapes

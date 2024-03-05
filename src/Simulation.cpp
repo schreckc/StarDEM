@@ -213,7 +213,7 @@ void Simulation::animate() {
   }
 
   if (verbose) {
-    std::cout<<"\n**************** Step: "<<time<<", frame: "<<time/n<<" ******************\n"<<std::endl;
+    std::cout<<"\n\n**************** Step: "<<time<<", frame: "<<time/n<<" ******************\n"<<std::endl;
     std::cout<<"*** Simulation times *** \n One step average: "<<std::endl;
     std::cout <<"   "<<Times::TIMES->getAverageStepTimeLastFrame(Times::simu_time_)<< "(over the last frame)"<<std::endl;
     std::cout <<"   "<<Times::TIMES->getAverageStepTime(Times::simu_time_)<<" (all time)"<<std::endl;
