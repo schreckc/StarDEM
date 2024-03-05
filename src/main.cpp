@@ -119,10 +119,7 @@ void treatArguments(int argc, char **argv) {
 
 int main(int argc, char **argv) {
   uint _time = 1;
-
-  uint stop_time = 2000;
-  uint count = 0;
-  std::list<FLOAT> densities;
+  stop_time = 2000;
   
   srand(time(NULL));
   

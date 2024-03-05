@@ -522,7 +522,7 @@ void Smarticle::gravity() {
 }
 
 
-static FLOAT Smarticle::distance(VEC2 v) {
+FLOAT Smarticle::distance(VEC2 v) {
   FLOAT x = v(0);
   FLOAT y = v(1);
   return distance(x, y);
@@ -530,7 +530,7 @@ static FLOAT Smarticle::distance(VEC2 v) {
 
 
 // distance using directly r and dr function (other fucntions use lookup table)
-static FLOAT Smarticle::distance(FLOAT x, FLOAT y) {
+FLOAT Smarticle::distance(FLOAT x, FLOAT y) {
   FLOAT theta = atan(y/x);
   FLOAT d2 = x*x + y*y;
   FLOAT d = sqrt(d2);
@@ -557,7 +557,7 @@ static FLOAT Smarticle::distance(FLOAT x, FLOAT y) {
 }
 
 
-static FLOAT Smarticle::radialDistance(FLOAT x, FLOAT y) {
+FLOAT Smarticle::radialDistance(FLOAT x, FLOAT y) {
   FLOAT theta = atan(y/x);
   FLOAT d2 = x*x + y*y;
   FLOAT d = sqrt(d2);
@@ -579,7 +579,7 @@ static FLOAT Smarticle::radialDistance(FLOAT x, FLOAT y) {
 }
 
 
-static FLOAT Smarticle::numericalDistance(FLOAT x, FLOAT y) {
+FLOAT Smarticle::numericalDistance(FLOAT x, FLOAT y) {
   FLOAT d_min = 1;
   int nstep = dem_conf::sm_resolution_display;
   FLOAT astep = 2*M_PI/(FLOAT)nstep;

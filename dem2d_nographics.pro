@@ -26,6 +26,6 @@ HEADERS  = $${SRC_DIR}*.hpp
 HEADERS  += $${SRC_DIR}*.h
 SOURCES  = $${SRC_DIR}*.cpp
 
-QMAKE_CXXFLAGS += -g -fopenmp -O3 -D__MODE_DEBUG=3 -DNO_GRAPHICS_ -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -DOPTIM_ENABLE_EIGEN_WRAPPERS
-LIBS += -lpthread -lgomp -fopenmp -lSDL2 -lSDL2_image -L/usr/lib # -loptim -lblas
+QMAKE_CXXFLAGS += -g -fopenmp -O3 -D__MODE_DEBUG=0 -DNO_GRAPHICS_ -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -DOPTIM_ENABLE_EIGEN_WRAPPERS
+LIBS += -lpthread -lgomp -fopenmp -lSDL2 -lSDL2_image -L/usr/libs
 include( ./examples.pri )
