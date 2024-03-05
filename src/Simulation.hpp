@@ -32,6 +32,7 @@ private :
   bool pop_wall;
 
 public :
+  bool verbose;
   std::list<Obstacle*> obstacles;
   
   Simulation();

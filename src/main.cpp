@@ -44,6 +44,8 @@ void help_parse() {
   std::cout<<"                         export particle shape in name_part.svg and scene in name_sc.svg \n"<<std::endl;
   std::cout<<"     -stop <end>"<<std::endl;
   std::cout<<"                         stop the animation at t = end\n"<<std::endl;
+  std::cout<<"     -verbose"<<std::endl;
+  std::cout<<"                         enable verbose mode\n"<<std::endl;
   std::cout<<"     -h, -help"<<std::endl;
   std::cout<<"                         print help (this one)\n"<<std::endl;
   
@@ -105,8 +107,10 @@ void treatArguments(int argc, char **argv) {
        std::cout<<"Stop at t = "<<argv[i+1]<<std::endl;
        stop_time = atoi(argv[i+1]);
        ++i;
+     } else if (s == "-verbose") {
+       std::cout<<"Verbose Mode"<<std::endl;
+       sim.verbose = true;
      } else if (s == "-h" || s == "-help") {
-       std::cout<<"help"<<std::endl;
        help_parse();
      } else {
        std::cerr<<"\nERROR: Unknown option\n"<<std::endl;

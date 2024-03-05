@@ -19,6 +19,7 @@ Simulation::Simulation() {
   import_ = false;
   export_ = false;
   load_conf_ = false;
+  verbose = false;
 
   INFO(3, "Creation Simulation");
 }
@@ -184,9 +185,9 @@ FLOAT Simulation::meanSpeed() {
 
 
 void Simulation::animate() {
+  uint n = dem_conf::frame_step/dem_conf::dt_;    
   if (!import_) {
     // main animation loop, run n physics step
-    uint n = dem_conf::frame_step/dem_conf::dt_;
     for (uint i = 0; i < n; ++i) {
       Times::TIMES->tick(Times::simu_time_);
       oneStep();
@@ -200,7 +201,6 @@ void Simulation::animate() {
   } else {
     importSim();
     //Obstacle animation
-    uint n = dem_conf::frame_step/dem_conf::dt_;
     for (uint i = 0; i < n; ++i) {
       for (auto &ob : obstacles) {
 	ob->animate();
@@ -212,21 +212,22 @@ void Simulation::animate() {
     exportSim();
   }
 
-  INFO(3, "Time Step "<<time<<"\n"
-       <<"*** Simulation times:\n one step average "
-       <<Times::TIMES->getAverageStepTimeLastFrame(Times::simu_time_)<< "(last frame)   "
-       <<Times::TIMES->getAverageStepTime(Times::simu_time_)<<" (all time)\n"
-       <<"last frame "<<Times::TIMES->getTimeLastFrame(Times::simu_time_)
-       <<"    average "<<Times::TIMES->getAverageFrameTime(Times::simu_time_));
-  INFO(3, "Display  "<<Times::TIMES->getTimeLastFrame(Times::display_time_));
+  if (verbose) {
+    std::cout<<"\n**************** Step: "<<time<<", frame: "<<time/n<<" ******************\n"<<std::endl;
+    std::cout<<"*** Simulation times *** \n One step average: "<<std::endl;
+    std::cout <<"   "<<Times::TIMES->getAverageStepTimeLastFrame(Times::simu_time_)<< "(over the last frame)"<<std::endl;
+    std::cout <<"   "<<Times::TIMES->getAverageStepTime(Times::simu_time_)<<" (all time)"<<std::endl;
+    std::cout <<"Time for the last frame "<<Times::TIMES->getTimeLastFrame(Times::simu_time_)<<std::endl;
+   std::cout <<"Average time for a frame "<<Times::TIMES->getAverageFrameTime(Times::simu_time_)<<std::endl;
+  std::cout<<"\n*** Display Time "<<Times::TIMES->getTimeLastFrame(Times::display_time_)<<std::endl;
 
-  INFO(3, "*** Detection time \n one step average"
-       <<Times::TIMES->getAverageStepTimeLastFrame(Times::coll_detection_time_)<< "(last frame)   "
-       <<Times::TIMES->getAverageStepTime(Times::coll_detection_time_)<<" (all time)\n"
-       <<"last frame "<<Times::TIMES->getTimeLastFrame(Times::coll_detection_time_)
-       <<"    average "<<Times::TIMES->getAverageFrameTime(Times::coll_detection_time_));
-  
+  std::cout<<"\n*** Detection of collision times *** \n One step average: "<<std::endl;
+  std::cout <<"   "<<Times::TIMES->getAverageStepTimeLastFrame(Times::coll_detection_time_)<< "(over the last frame)"<<std::endl;
+    std::cout <<"   "<<Times::TIMES->getAverageStepTime(Times::coll_detection_time_)<<" (all time)"<<std::endl;
+    std::cout <<"Time for the last frame "<<Times::TIMES->getTimeLastFrame(Times::coll_detection_time_)<<std::endl;
+   std::cout <<"Average time for a frame "<<Times::TIMES->getAverageFrameTime(Times::coll_detection_time_)<<std::endl;
   Times::TIMES->next_frame();
+  }
 }
 
 #ifndef NO_GRAPHICS_ 
