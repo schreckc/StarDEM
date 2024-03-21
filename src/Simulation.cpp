@@ -194,6 +194,7 @@ void Simulation::animate() {
       Times::TIMES->tock(Times::simu_time_);
       Times::TIMES->next_loop();
     }
+    // for the rest_angle scenario
     if (pop_wall && time/n == 400) {
       obstacles.pop_back();
       obstacles.pop_back();

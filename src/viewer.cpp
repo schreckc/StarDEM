@@ -161,9 +161,7 @@ void Viewer::treatArguments(int argc, char **argv) {
 void Viewer::animate() {
   try {     
     sim.animate();
-
-    /** for the "rest angle" scenario */
-    
+    ++_time;
     
     if (/*(_time > 10 && sim.stopCondition())||*/_time > stop_time) {
       stopAnimation();

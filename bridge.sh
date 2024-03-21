@@ -22,5 +22,4 @@ if [ $# -ne 0 ]; then
     fi
 fi
 
-./dem2d -c $repo/$conf -s $repo/$scene -v $repo/$xml -run $arguments
-
+./dem2d -c $repo/$conf -s $repo/$scene -v $repo/$xml $arguments  -run
