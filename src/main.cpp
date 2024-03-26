@@ -30,8 +30,8 @@ uint stop_time;
 
 
 void help_parse() {
-  std::cout<<"\n     *** READ MESH: Help ***\n"<<std::endl;
-  std::cout<<"Synopsis: \n     .\\main <options>\n\nOptions:"<<std::endl;
+  std::cout<<"\n     *** StarDEM: Help ***\n"<<std::endl;
+  std::cout<<"Synopsis: \n     .\\dem2d <options>\n\nOptions:"<<std::endl;
   std::cout<<"     -config, -c <file.conf>\n"<<std::endl;
   std::cout<<"                         use configuration file\n"<<std::endl;
   std::cout<<"     -scene, -s <file.sc>\n"<<std::endl;
